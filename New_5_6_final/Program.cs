@@ -32,7 +32,7 @@ namespace New_5_6_final
             if (Data.HavePets == "Да")
             {
                 Console.WriteLine("Введите количество питомцев: ");
-                Data.NumOfPet = CorrectNumber(Data.NumOfPet);
+                Data.NumOfPet = CorrectNumber(Data.NumOfPet);                
                 Data.PetNames = NamePet(Data.NumOfPet);
             }
             Data.Afavcolors = 0;
@@ -68,6 +68,7 @@ namespace New_5_6_final
 
             }
             return PetNames;
+             
 
         } 
         static string[] AColors(int Afavcolors, string[] favcolors) //Метод ввода цветов
