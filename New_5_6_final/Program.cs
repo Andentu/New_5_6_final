@@ -7,7 +7,7 @@ namespace New_5_6_final
         static void Main(string[] args)
         {
             
-            PersonData();
+            
 
 
         }
@@ -18,7 +18,7 @@ namespace New_5_6_final
         }
         static (string Name, string SurName, int Age, string HavePets, int NumOfPet, string[] PetNames, int Afavcolors, string[] favcolors) PersonData () //Метод для ввода данных пользователя
         {
-            (string Name, string SurName, int Age,string HavePets, int NumOfPet, string[] PetNames, int Afavcolors, string [] favcolors) Data;
+            (string Name, string SurName, int Age, string HavePets, int NumOfPet, string[] PetNames, int Afavcolors, string [] favcolors) Data;
             Console.Write("Введите ваше имя: ");
             Data.Name = Console.ReadLine();
             Console.Write("\nВведите вашу фамилию: ");
@@ -42,7 +42,7 @@ namespace New_5_6_final
             Data.favcolors = new string[Data.Afavcolors];
             AColors(Data.Afavcolors, Data.favcolors);
             ShowColor(Data.favcolors);
-            return Data;
+            return (Data.Name, Data.SurName, Data.Age, Data.HavePets, Data.NumOfPet, Data.PetNames, Data.Afavcolors, Data.favcolors);
 
         }
         static int CorrectNumber(int number) // Метод проверяет корректность введенных чисел
