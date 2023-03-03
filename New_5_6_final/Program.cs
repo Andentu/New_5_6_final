@@ -37,7 +37,8 @@ namespace New_5_6_final
             {
                 Console.WriteLine("Введите количество питомцев: ");
                 NumOfPet = CorrectNumber(NumOfPet);
-                NamePet(NumOfPet);
+                string [] PetNames = NamePet(NumOfPet);
+
             }
             int Afavcolors = 0;
             Console.WriteLine("Введите количество любимых цветов:");
