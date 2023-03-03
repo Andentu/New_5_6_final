@@ -40,9 +40,9 @@ namespace New_5_6_final
         }
         static int CorrectNumber (int number) {
             bool result = int.TryParse(Console.ReadLine(), out number);
-            if (result != true)
+            if (result != true || number == 0)
                 {
-                    Console.WriteLine("Введите корректное число");
+                    Console.WriteLine("Введите корректное число больше 0: ");
                     CorrectNumber(number);
                 }
                 return number;
