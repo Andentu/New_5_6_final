@@ -6,49 +6,46 @@ namespace New_5_6_final
     {
         static void Main(string[] args)
         {
-            /*string Name = "0", SurName = "0";
-            int Age = 0, NumOfPet = 0, Afavcolors = 0;
-            bool HavePets = true;
-            string[] PetNames = {"0", "0"};*/
-
-            //(Name,  SurName,  Age,  HavePets,  NumOfPet, PetNames [],  Afavcolors);
+            
             PersonData();
 
 
         }
-        static void ShowPersonData(string Name, string SurName, int Age, bool HavePets, int NumOfPet, string[] PetNames, int Afavcolors)
+        static void ShowPersonData(string Name, string SurName, int Age, bool HavePets, int NumOfPet, string[] PetNames, int Afavcolors) //Метод показа данных пользователя
         {
 
 
         }
-        static void PersonData() //string Name, string SurName, int Age, bool HavePets, int NumOfPet,  string [] PetNames, int Afavcolors)
+        static (string Name, string SurName, int Age, string HavePets, int NumOfPet, string[] PetNames, int Afavcolors, string[] favcolors) PersonData () //Метод для ввода данных пользователя
         {
+            (string Name, string SurName, int Age,string HavePets, int NumOfPet, string[] PetNames, int Afavcolors, string [] favcolors) Data;
             Console.Write("Введите ваше имя: ");
-            string Name = Console.ReadLine();
+            Data.Name = Console.ReadLine();
             Console.Write("\nВведите вашу фамилию: ");
-            string SurName = Console.ReadLine();
+            Data.SurName = Console.ReadLine();
             Console.Write("\nВведите ваш возраст: ");
-            int Age = 0;
-            Age = CorrectNumber(Age);
+            Data.Age = 0;
+            Data.Age = CorrectNumber(Data.Age);
             Console.Write("\nУ вас есть питомцы? (Да/Нет)");
-            string HavePets = Console.ReadLine();
-            int NumOfPet = 0;
-            if (HavePets == "Да")
+            Data.HavePets = Console.ReadLine();
+            Data.NumOfPet = 0;
+            if (Data.HavePets == "Да")
             {
                 Console.WriteLine("Введите количество питомцев: ");
-                NumOfPet = CorrectNumber(NumOfPet);
-                NamePet(NumOfPet);
+                Data.NumOfPet = CorrectNumber(Data.NumOfPet);
+                Data.PetNames = NamePet(Data.NumOfPet);
             }
-            int Afavcolors = 0;
+            Data.Afavcolors = 0;
             Console.WriteLine("Введите количество любимых цветов:");
-            Afavcolors = CorrectNumber(Afavcolors);
+            Data.Afavcolors = CorrectNumber(Data.Afavcolors);
 
-            string[] favcolors = new string[Afavcolors];
-            AColors(Afavcolors, favcolors);
-            ShowColor(favcolors);
+            Data.favcolors = new string[Data.Afavcolors];
+            AColors(Data.Afavcolors, Data.favcolors);
+            ShowColor(Data.favcolors);
+            return Data;
 
         }
-        static int CorrectNumber(int number)
+        static int CorrectNumber(int number) // Метод проверяет корректность введенных чисел
         {
             bool result = int.TryParse(Console.ReadLine(), out number);
             if (result != true || number == 0)
@@ -60,7 +57,7 @@ namespace New_5_6_final
 
 
         }
-        static string[] NamePet(int number)
+        static string[] NamePet(int number) //Метод для ввода в массив кличек животных
         {
             Console.WriteLine("Введите клички питомцев: ");
             string[] PetNames = new string[number];
@@ -72,8 +69,8 @@ namespace New_5_6_final
             }
             return PetNames;
 
-        }
-        static string[] AColors(int Afavcolors, string[] favcolors)
+        } 
+        static string[] AColors(int Afavcolors, string[] favcolors) //Метод ввода цветов
         {
             Console.WriteLine("Введите выберите {0} цвета/цветов из (красный, желтый, зеленый, голубой, фиолетовый, циан, белый) и введите ваши любимые цвета:", Afavcolors);
             for (int i = 0; i < Afavcolors; i++)
@@ -83,7 +80,7 @@ namespace New_5_6_final
             }
             return favcolors;
         }
-        static void ShowColor(string[] favcolors)
+        static void ShowColor(string[] favcolors) //Метод показа выбранных цветов
         {
             for (int i = 0; i < favcolors.Length; i++)
             {
