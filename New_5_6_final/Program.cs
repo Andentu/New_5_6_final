@@ -33,6 +33,7 @@ namespace New_5_6_final
             {
                 Console.WriteLine("Введите количество питомцев: ");
                 Data.NumOfPet = CorrectNumber(Data.NumOfPet);
+                Data.PetNames = new string[] { "Igle", "Dog", "Cat" }; 
                 Data.PetNames = NamePet(Data.NumOfPet);
             }
             Data.Afavcolors = 0;
