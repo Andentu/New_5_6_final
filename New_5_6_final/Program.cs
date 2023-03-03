@@ -27,7 +27,7 @@ namespace New_5_6_final
             string Name = Console.ReadLine();
             Console.Write("\nВведите вашу фамилию: ");
             string SurName = Console.ReadLine();
-            Console.Write("\nВведите ваш возраст: ");
+            Console.Write("\nВведите ваш возраст: "); 
             int Age = 0;
             Age = CorrectNumber(Age);
             Console.Write("\nУ вас есть питомцы? (Да/Нет)");
