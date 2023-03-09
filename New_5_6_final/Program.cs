@@ -53,7 +53,7 @@ namespace New_5_6_final
             Data.HavePets = Console.ReadLine();
             Data.NumOfPet = 0;
             Data.PetNames = new string[4]; // Без предварительного присваивания выскакивает ошибка
-            if (Data.HavePets == "Да")
+            if (Data.HavePets == "Да" || Data.HavePets == "да")
             {
                 Console.Write("\nВведите количество питомцев: ");                
                 Data.NumOfPet = CorrectNumber(ref Data.NumOfPet);               
@@ -61,7 +61,7 @@ namespace New_5_6_final
 
             }            
             Data.Afavcolors = 0;
-            Console.Write("\nВведите количество любимых цветов:");
+            Console.Write("\nВведите количество любимых цветов (до 7):");
             Data.Afavcolors = CorrectNumber(ref Data.Afavcolors);
 
             Data.favcolors = new string[Data.Afavcolors];
