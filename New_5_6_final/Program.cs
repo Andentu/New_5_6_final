@@ -24,8 +24,8 @@ namespace New_5_6_final
             Data.favcolors = new string[4];                       
 
             (Data.Name, Data.SurName, Data.Age, Data.HavePets, Data.NumOfPet, Data.PetNames, Data.Afavcolors, Data.favcolors) = PersonData();            
-            if (Data.HavePets == "Да") {
-                Console.WriteLine("\nВаше имя: {0}.\nВаша фамилия: {1}.\nВаш возраст: {2}.\nУ вас {3} питомца/питомцев: .", Data.Name, Data.SurName, Data.Age, Data.NumOfPet);
+            if (Data.HavePets == "Да" || Data.HavePets == "да") {
+                Console.WriteLine("\nВаше имя: {0}.\nВаша фамилия: {1}.\nВаш возраст: {2}.\nУ вас {3} питомца/питомцев: ", Data.Name, Data.SurName, Data.Age, Data.NumOfPet);
                 foreach (var pets in Data.PetNames)
                 {
                     Console.WriteLine(pets);
@@ -97,7 +97,7 @@ namespace New_5_6_final
         } 
         static string[] AColors(int Afavcolors, string[] favcolors) //Метод ввода цветов
         {
-            Console.WriteLine("Выберите {0} цвета/цветов из представленных: красный, желтый, зеленый, голубой, фиолетовый, циан, белый и введите введите их.", Afavcolors);
+            Console.WriteLine("Выберите {0} цвета/цветов из представленных: красный, желтый, зеленый, голубой, синий, фиолетовый, циан, белый и введите введите их.", Afavcolors);
             for (int i = 0; i < Afavcolors; i++)
             {
                 Console.Write("Введите ваш цвет номер {0}: ", i + 1);
