@@ -72,7 +72,7 @@ namespace New_5_6_final
         static int CorrectNumber(ref int number) // Метод проверяет корректность введенных чисел
         {
             bool result = int.TryParse(Console.ReadLine(), out number);
-            if (result != true || number == 0)
+            if (result != true || number <= 0)
             {
                 Console.WriteLine("Введите корректное число больше 0: ");
                 CorrectNumber(ref number);
