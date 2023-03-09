@@ -11,12 +11,12 @@ namespace New_5_6_final
 
 
         }
-        static void ShowPersonData(string Name, string SurName, int Age, bool HavePets, int NumOfPet, string[] PetNames, int Afavcolors) //Метод показа данных пользователя
+        static void ShowPersonData(string Name, string SurName, int Age, string HavePets, int NumOfPet, string[] PetNames, int Afavcolors, string[] favcolors) //Метод показа данных пользователя
         {
-
+            
 
         }
-        static (string Name, string SurName, int Age, string HavePets, int NumOfPet, string[] PetNames, int Afavcolors, string[] favcolors) PersonData () //Метод для ввода данных пользователя
+        static (string Name, string SurName, int Age, string HavePets, int NumOfPet, string[] PetNames, int Afavcolors, string[] favcolors) PersonData ((string Name, string SurName, int Age, string HavePets, int NumOfPet, string[] PetNames, int Afavcolors, string[] favcolors) data) //Метод для ввода данных пользователя
         {
             (string Name, string SurName, int Age, string HavePets, int NumOfPet, string[] PetNames, int Afavcolors, string [] favcolors) Data;
             Console.Write("Введите ваше имя: ");
@@ -32,8 +32,11 @@ namespace New_5_6_final
             if (Data.HavePets == "Да")
             {
                 Console.WriteLine("Введите количество питомцев: ");
-                Data.NumOfPet = CorrectNumber(Data.NumOfPet);                
+                Data.PetNames = new string[4] { "1", "2", "3", "4" }; // Попытка придать базовое значение массиву для того, чтобы убрать ошибку
+                Data.NumOfPet = CorrectNumber(Data.NumOfPet);               
                 Data.PetNames = NamePet(Data.NumOfPet);
+                
+
             }
             Data.Afavcolors = 0;
             Console.WriteLine("Введите количество любимых цветов:");
@@ -43,6 +46,8 @@ namespace New_5_6_final
             AColors(Data.Afavcolors, Data.favcolors);
             ShowColor(Data.favcolors);
             return (Data.Name, Data.SurName, Data.Age, Data.HavePets, Data.NumOfPet, Data.PetNames, Data.Afavcolors, Data.favcolors);
+            // Ошибка: Использование поля "PetNames", которому, возможно, не присвоено значение. Из-за чего невозможно далее продолжить выполнение программы
+            // return Data; при такой команде ошибка остается
 
         }
         static int CorrectNumber(int number) // Метод проверяет корректность введенных чисел
@@ -52,7 +57,7 @@ namespace New_5_6_final
             {
                 Console.WriteLine("Введите корректное число больше 0: ");
                 CorrectNumber(number);
-            }
+            }            
             return number;
 
 
